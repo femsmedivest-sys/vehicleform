@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLN FORM</title>
+    <title>HTJ FORM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,8 @@
         .page.active {
             display: block;
         }
-        /* KOD YANG TELAH DIBETULKAN: Menggantikan @apply dengan CSS Standard */
+
+        /* KOD YANG TELAH DIBETULKAN: Menggantikan @ apply dengan CSS Standard */
         .asset-card {
             background-color: rgba(203, 205, 205, 0.4); /* bg-white */
             padding: 1.5rem; /* p-6 */
@@ -102,6 +103,7 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         /* ========================
         // Gaya Floating Button
         // ========================*/
@@ -142,46 +144,46 @@
                 display: none !important; /* Sembunyikan teks pada mobile */
             }
         }
-    </style>
+
+        </style>
 </head>
-<button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button>
-    <!-- Pop-up Mesej -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
+
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
-    <!-- Logos Bersebelahan -->
+
     <div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible" class="h-16 w-auto mb-4 sm:mb-0">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest" class="h-16 w-auto">
     </div>
-    <!-- Kontena Utama -->
+
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
-        <!-- Halaman Menu Utama -->
         <div id="mainMenuPage" class="page active">
-            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF VEHICLES:</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Butang untuk setiap jenis aset -->
-                <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
+                <button class="asset-card" onclick="showForm('AMBULANCE')">AMBULANCE</button>
+                <button class="asset-card" onclick="showForm('NON AMBULANCE')">NON AMBULANCE</button>
+                <!-- <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AIR HANDLING UNIT')">AIR HANDLING UNIT</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
-                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
+                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button> 
                 <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
                 <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
                 <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
                 <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
-                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
+                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button> -->
             </div>
         </div>
-        <!-- Halaman Borang Dinamik -->
+
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
                 <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Medan borang akan ditambah di sini secara dinamik -->    
-                </div>
-                <!-- Butang Hantar dan Back -->
+                    </div>
+
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Kembali ke Menu Utama
@@ -194,7 +196,6 @@
         </div>
     </div>
 
-    <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
     <script>
         // Get the button:
             let mybutton = document.getElementById("myBtn");
@@ -215,255 +216,27 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzcZs8X_V6Ed1GLdgJ9Kg78NiaYXBiDZMwm95g9Dddz8rkhyj8D-YptSAx4sO_T0319/exec';//Write the API here
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzuHIQMz8aMCPYYPYyeZI7CkPZlY2pwWxDfBu4HWW71oCIS-PFMxvaR7t_K8dMhlTX4sQ/exec';//Write the API here
 
         const assetLists = {
-            'GENERATOR SET': [
-                {name: 'GENERATOR No-1', location: 'Bilik Genset Bangunan Hospital'},
-                {name: 'GENERATOR No-2', location: 'Bilik Genset Bangunan Hospital'},
-                {name: 'GENERATOR No-3', location: 'Bilik Genset Bangunan Hospital'},
-                {name: 'GENERATOR No-4', location: 'Bilik Genset Bangunan Hospital'},
-                {name: 'GENERATOR No-5', location: 'Bilik Genset Bangunan Hospital'},
-                {name: 'GENERATOR No-6', location: 'Bilik Genset Bangunan Hospital'}
-               // {name: 'GENERATOR No-1', location: 'Bilik Genset Bangunan Hospital'},
-               // {name: 'AMF BOARD NP-1', location: 'Bilik Genset Bangunan Hospital'},
-               // {name: 'GENERATOR NO-2', location: 'Bilik Genset Bangunan Hospital'},
-               // {name: 'AMF BOARD NP-2', location: 'Bilik Genset Bangunan Hospital'},
-               // {name: 'GENERATOR KUARTERS BLOK-A', location: 'Bilik Genset Kuarters'}, 
-               // {name: 'AMF BOARD BLOK-A', location: 'Bilik Genset Kuarters'},
-               // {name: 'GENERATOR KUARTERS BLOK-B', location: 'Bilik Genset Kuarters'},
-               // {name: 'AMF BOARD BLOK-B', location: 'Bilik Genset Kuarters'},  
-               // {name: 'GENERATOR KUARTERS BLOK-C', location: 'Bilik Genset Kuarters'},
-               // {name: 'AMF BOARD BLOK-B', location: 'Bilik Genset Kuarters'},
-               // {name: 'GENERATOR HDL 2', location: 'Bilik Genset Hemodialisis 2'},
-               // {name: 'AMF BOARD HDL-2', location: 'Bilik Genset Hemodialisis 2'},
+             'AMBULANCE': [
+                {name: 'Model Hiace Panel Slwb 2.7 Mt (BPG7207)', location: 'Toyota'},
+                {name: 'Model Hiace Panel Slwb 2.7 Mt (BPG7215)', location: 'Toyota'},
+                {name: 'Model Hiace Panel Slwb 2.7 Mt (BPG7258)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb (BKM 8615)', location: 'Toyota'},
+                {name: 'Model Slwb 2.7mt (BNR 1586)', location: 'Toyota Hiace'}
             ],
 
-            'ELECTRICAL SUPPLY': [
-                {name: 'VCB  NO-1', location: 'Bilik HT'},
-                {name: 'VCB  NO-2', location: 'Bilik HT'},
-                {name: 'VCB  NO-3', location: 'Bilik HT'},
-                {name: 'VCB  NO-4', location: 'Bilik HT'},
-                {name: 'VCB  NO-5', location: 'Bilik HT'},
-                {name: 'VCB  NO-6', location: 'Bilik HT'},
-                {name: 'TX-1', location: 'Bilik Transformer'},
-                {name: 'TX-2', location: 'Bilik Transformer'}    
-               // {name: 'TX-3', location: 'Bilik Transformer'},
-               // {name: 'TX-4', location: 'Bilik Transformer'},
-               //  {name: 'MSB NO-1', location: 'Bilik LV'},
-               //  {name: 'MSB NO-2', location: 'Bilik LV'},
-               //  {name: 'MSB NO-3', location: 'Bilik LV'},
-               //  {name: 'EMSB NO-1', location: 'Bilik LV'},
-               //  {name: 'EMSB NO-2', location: 'Bilik LV'},
-               //  {name: 'EMSB NO-3', location: 'Bilik LV'},
-               //  {name: 'MSB HDL-2', location: 'Bilik LV'},
-               //  {name: 'SSB HDL-2', location: 'Bilik LV'},
-               //  {name: 'MSB NO-4', location: 'Bilik Chiller'},
-               //  {name: 'EMSB NO-4', location: 'Bilik Chiller'},
-               //  {name: 'MSB Kuarters Blok-A', location: 'Bilik LV Kuarters'},
-               //  {name: 'MSB Kuarters Blok-B', location: 'Bilik LV Kuarters'},
-               //  {name: 'MSB Kuarters Blok-C', location: 'Bilik LV Kuarters'},
-               //  {name: 'TX TR4B', location: 'TX ROOM'}
-            ],
-            
-
-            'AIR HANDLING UNIT': [
-                //Auditorium
-                {name: 'AHU-1(KLN301921)', location: 'Auditorium'},
-                {name: 'AHU-2(KLN301926)', location: 'Auditorium'},
-                {name: 'AHU-3(KLN301927)', location: 'Auditorium'},
-                // DEWAN BEDAH
-                {name: 'AHU-1(KLN301915)', location: 'Dewan Bedah'},
-                {name: 'AHU-2(KLN301916)', location: 'Dewan Bedah'},
-                {name: 'AHU-3(KLN301917)', location: 'Dewan Bedah'},
-                {name: 'AHU-4(KLN301918)', location: 'Dewan Bedah'},
-                {name: 'AHU-5(KLN301919)', location: 'Dewan Bedah'},
-                {name: 'AHU-6(KLN301920)', location: 'Dewan Bedah'},
-                {name: 'AHU-7(KLN301949)', location: 'Dewan Bedah'},
-                {name: 'AHU-8(KLN301957)', location: 'Dewan Bedah'},
-                {name: 'AHU-9(KLN301958)', location: 'Dewan Bedah'},
-                // DEWAN BERSALIN
-                {name: 'AHU (KLN301946)', location: 'Dewan Bersalin'},
-                // FARMASI (OUT-PATIENT)
-                {name: 'AHU (KLN301940)', location: 'Farmasi (Out-Patient)'},
-                // JABATAN BEKALAN BAHAN STERIL
-                {name: 'AHU (KLN301942)', location: 'Jabatan Bekalan Bahan Steril'},
-                // JABATAN FARMASI
-                {name: 'AHU (KLN301930)', location: 'Jabatan Farmasi'},
-                {name: 'AHU-(CDR),(KLN301909)', location: 'Jabatan Farmasi '},
-                {name: 'AHU-(TPN),(KLN301910)', location: 'Jabatan Farmasi'},
-                // JABATAN FORENSIK
-                {name: 'AHU (KLN301924)', location: 'Jabatan Forensik'},
-                // PATOLOGI & TABUNG DARAH
-                {name: 'AHU-1(KLN301925)', location: 'Jabatan Patologi dan Tabung Darah'},
-                {name: 'AHU-2(KLN301931)', location: 'Jabatan Patologi dan Tabung Darah'},
-                // PENGIMEJIAN & DIAGNOSTIK
-                {name: 'AHU-1(KLN301928)', location: 'Jabatan Pengimejian & Diagnostik'},
-                {name: 'AHU-2(KLN301941)', location: 'Jabatan Pengimejian & Diagnostik'},
-                // REHABILITASI
-                {name: 'AHU (KLN301936)', location: 'Jabatan Perubatan Rehabilitasi'},
-                // ITD
-                {name: 'AHU-1(KLN301911)', location: 'Jabatan Teknologi Maklumat (ITD)'},
-                {name: 'AHU-2(KLN302254)', location: 'Jabatan Teknologi Maklumat (ITD)'},
-                {name: 'AHU-3(KLN301929)', location: 'Jabatan Teknologi Maklumat (ITD)'},
-                // KECEMASAN & TRAUMA
-                {name: 'AHU-1(KLN301938)', location: 'Kecemasan dan Trauma'},
-                {name: 'AHU-2(KLN301904)', location: 'Kecemasan dan Trauma'},
-                // KLINIK PAKAR
-                {name: 'AHU (KLN301956)', location: 'Klinik Pakar'},
-                {name: 'AHU-O&G (KLN301955)', location: 'Klinik Pakar'},
-                {name: 'AHU-1(ENT/OPTH),(KLN301937)', location: 'Klinik Pakar'},
-                {name: 'AHU-2(ENT/OPTH),(KLN301948)', location: 'Klinik Pakar'},
-                // KLINIK PERGIGIAN
-                {name: 'AHU (KLN301922)', location: 'Klinik Pergigian'},
-                // KLINIK PESAKIT LUAR
-                {name: 'AHU-1(KLN301939)', location: 'Klinik Pesakit Luar'},
-                {name: 'AHU-2(KLN301950)', location: 'Klinik Pesakit Luar'},
-                // PENTADBIRAN
-                {name: 'AHU-1(KLN301923)', location: 'Pejabat Pentadbiran'},
-                // PUSAT PENDIDIKAN LANJUTAN
-                {name: 'AHU-1(KLN301914)', location: 'Pusat Pendidikan Lanjutan'},
-                {name: 'AHU-2(KLN301945)', location: 'Pusat Pendidikan Lanjutan'},
-                // REKOD PERUBATAN & STOR PERUBATAN
-                {name: 'AHU-Bilik Rekod,(KLN301952)', location: 'Bilik Perubatan'},
-                {name: 'AHU-Bilik Stor,(KLN301913)', location: 'Bilik Perubatan'},
-                // HEMODIALISIS
-                {name: 'AHU (KLN301932)', location: 'Unit Hemodialisis'},
-                // UNIT RAWATAN HARIAN
-                {name: 'AHU-1(KLN301943)', location: 'Unit Rawatan Harian'},
-                {name: 'AHU-2(KLN301951)', location: 'Unit Rawatan Harian'},
-                // ICU
-                {name: 'AHU-1(KLN301935)', location: 'Unit Rawatan Rapi (ICU)'},
-                {name: 'AHU-2(KLN301954)', location: 'Unit Rawatan Rapi (ICU)'},
-                // NICU
-                {name: 'AHU-1(KLN301933)', location: 'Unit Rawatan Rapi Neonat (NICU)'},
-                {name: 'AHU-2(KLN301934)', location: 'Unit Rawatan Rapi Neonat (NICU)'},
-                // WAD
-                {name: 'AHU-Bunga Raya 1,(KLN301944)', location: 'Wad'},
-                {name: 'AHU-Melor 7B (KLN301953)', location: 'Wad'},
-            ],
-
-            'LIFT': [
-                {name: 'LIFT-Toshiba-1(KLN302512)', location: 'Bangunan Hospital'},
-                {name: 'LIFT-Toshiba-2(KLN302513)', location: 'Bangunan Hospital'},
-                {name: 'LIFT-Toshiba-3(KLN302514)', location: 'Bangunan Hospital'},
-                {name: 'LIFT-Toshiba-4(KLN302515)', location: 'Bangunan Hospital'},
-                {name: 'LIFT-Toshiba-5(KLN302516)', location: 'Bangunan Hospital'},
-                {name: 'LIFT-Toshiba-6(KLN302517)', location: 'Bangunan Hospital'},
-                {name: 'LIFT-Toshiba-7(KLN302518)', location: 'Bangunan Hospital'},
-                {name: 'LIFT-Toshiba-Blok-A1(KLN302519)', location: 'Bangunan Kuarters'},
-                {name: 'LIFT-Toshiba-Blok-A2(KLN302520)', location: 'Bangunan Kuarters'},
-                {name: 'LIFT-Toshiba-Blok-B1(KLN302524)', location: 'Bangunan Kuarters'},
-                {name: 'LIFT-Toshiba-Blok-B2(KLN302523)', location: 'Bangunan Kuarters'},
-                {name: 'LIFT-Toshiba-Blok-C1(KLN302521)', location: 'Bangunan Kuarters'},
-                {name: 'LIFT-Toshiba-Blok-C2(KLN302522)', location: 'Bangunan Kuarters'},
-                {name: 'LIFT-Toshiba', location: 'Bangunan'},
-            ],
-            
-             'WATER SUPPLY SYSTEM': [
-                {name: 'Suction Tank 1 (FRP) - 120,000 Liter', location: 'MPR Aras 1'}, 
-                {name: 'Suction-Tank-1-Pump-1', location: 'MPR Aras 1'}, 
-                {name: 'Suction-Tank-1-Pump-2', location: 'MPR Aras 1'},
-
-                {name: 'Suction Tank 2 (FRP)) - 90,000 Liter', location: 'MPR Aras 1'},
-                {name: 'Suction-Tank-2-Pump-1', location: 'MPR Aras 1'}, 
-                {name: 'Suction-Tank-2-Pump-2', location: 'MPR Aras 1'},
-                 
-
-                {name: 'Eleveted Tank 1 (FRP) - 120,000 Liter', location: 'MPR Aras 11'}, 
-                {name: 'Elevated-Tank-1-Pump-1', location: 'MPR Aras 11'}, 
-                {name: 'Elevated-Tank-1-Pump-2', location: 'MPR Aras 11'},
-
-                {name: 'Eleveted Tank 2 (FRP) - 120,000 Liter', location: 'MPR Aras 11'}, 
-                {name: 'Elevated-Tank-2-Pump-1', location: 'MPR Aras 11'}, 
-                {name: 'Elevated-Tank-2-Pump-2', location: 'MPR Aras 11'},
-
-                {name: 'Eleveted Tank 3 (FRP) - 300,000 Liter', location: 'MPR Aras 11'}, 
-                {name: 'Elevated-Tank-3-Pump-1', location: 'MPR Aras 11'}, 
-                {name: 'Elevated-Tank-3-Pump-2', location: 'MPR Aras 11'}
-            ],
-            
-            
-            'BAS SYSTEM': [
-                {name: 'Building Automation System/BSS/BMS/PLC,Outstation/RPU(Repeater)/DDC(KLN305689)', location: 'Bilik Konsumer HT Switch Gear'}
-            ],
-            
-            'CHILLER AND COOLING TOWER': [
-                {name: 'Screw-Chiller-1', location: 'Plantroom'},
-                {name: 'Screw-Chiller-2', location: 'Plantroom'},
-                {name: 'Screw-Chiller-3', location: 'Plantroom'},
-                {name: 'Screw-Chiller-4', location: 'Plantroom'},
-                {name: 'Cooling-Tower-1', location: 'Plantroom'},
-                {name: 'Cooling-Tower-2', location: 'Plantroom'},
-                {name: 'Cooling-Tower-3', location: 'Plantroom'},
-                {name: 'Cooling-Tower-4', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Secondary-Chilled-Water-Pump-1', location: 'Plantroom'}, 
-                {name: 'Secondary-Chilled-Water-Pump-2', location: 'Plantroom'}, 
-                {name: 'Secondary-Chilled-Water-Pump-3', location: 'Plantroom'}
-                //{name: 'CHILLER-1', location: 'Main PLant Room'},
-                //{name: 'CHILLER-2', location: 'Main PLant Room'},
-                //{name: 'CHILLER-3', location: 'Main PLant Room'},
-                //{name: 'CHILLER-4', location: 'Main PLant Room'},
-                //{name: 'COOLING TOWER-1', location: 'Main PLant Room'},
-                //{name: 'COOLING TOWER-2', location: 'Main PLant Room'},
-                //{name: 'COOLING TOWER-3', location: 'Main PLant Room'},
-                //{name: 'COOLING TOWER-4', location: 'Main PLant Room'}
-            ],
-            
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'Fire Protection, Detection, Alarm Panel, Main', location: 'Bilik Main Firealarm & PA System'},
-            ],
-            
-            'AUTOCLAVE': [
-                {name: 'Autoclave-1', location: 'CSSD'},
-                {name: 'Autoclave-2', location: 'CSSD'},
-                {name: 'Autoclave-3', location: 'CSSD'},
-                {name: 'Autoclave-1', location: 'Lab'},
-                {name: 'Autoclave-2', location: 'Lab'},
-                {name: 'Autoclave', location: 'Hemodinamik'},
-                // {name: 'Free Standing (KLN300846)', location: 'Autoclave,CSD'},
-                // {name: 'Free Standing (KLN300845)', location: 'Autoclave,CSD'},
-                // {name: 'Free Standing (KLN301660)', location: 'Bilik Autoclave Media,PAT'},
-                // {name: 'Free Standing (KLN301663)', location: 'Bilik Autoclave,PAT'},
-                // {name: 'PORTABLE (JHR006/001026)', location: 'Bilik Autoclave,PAT'},
-                // {name: 'TABLE TOP (KLN300936)', location: 'Bilik Bedah Mulut,JKT'},
-                // {name: 'TABLE TOP (KLN301816)', location: 'Bilik Cucian,FOR'},
-                // {name: 'TABLE TOP (KLN300640)', location: 'Bilik Mencuci,DCU'},
-                // {name: 'TABLE TOP (KLN301669)', location: 'Bilik Prosedur(THT,Bedah Mulut),K8B'},
-                // {name: 'TABLE TOP (KLN301235)', location: 'Bilik Autoclave,DEN'},
-                // {name: 'TABLE TOP (KLN301236)', location: 'Bilik Autoclave,DEN'},
-                // {name: 'TABLE TOP (KLN301237)', location: 'Bilik Autoclave,DEN'},
-                // {name: 'TABLE TOP (KLN300771)', location: 'Ruang Mencuci Endoskop,OTR'},
-                // {name: 'FREE STANDING (KLN300699)', location: 'Ruang Mencuci,HDU'},
-                // {name: 'TABLE TOP (KLN300778)', location: 'Ruang Persediaan-2,OTR'},
-                // {name: 'TABLE TOP (KLN300774)', location: 'Ruang Persediaan,OTR'},
-                // {name: 'TABLE TOP (KLN301668)', location: 'Ruang Persediaan,OTR'}
-            ],
-            
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'KLN302810', location: 'Bilik Medical Air'},
-                {name: 'KLN302811', location: 'Bilik Gas Surgical Air'},
-                {name: 'KLN302634', location: 'Bilik Oksigen'},
-                {name: 'KLN302635', location: 'Bilik Oksigen'},
-                {name: 'KLN302636', location: 'Bilik Oksigen'},
-                {name: 'KLN303101', location: 'Bilik Nitrous Oxcide,Enternox'},
-                {name: 'KLN303102', location: 'Bilik Nitrous Oxcide,Enternox'},
-                {name: 'KLN303017', location: 'Bilik Nitrous Oxcide,Enternox'},
-                {name: 'KLN303018', location: 'Bilik Nitrous Oxcide,Enternox'},
-                {name: 'COMPRESSOR NO-1', location: 'Plant Room'},
-                {name: 'COMPRESSOR NO-2', location: 'Plant Room'},
-                {name: 'VACUUM NO-1', location: 'Plant Room'},
-                {name: 'VACUUM NO-2', location: 'Plant Room'},
-                {name: 'VACUUM NO-3', location: 'Plant Room'},
-                {name: 'VACUUM NO-4', location: 'Plant Room'}
+             'NON AMBULANCE': [
+                {name: 'Model NPR (JWG2475)', location: 'Isuzu'},
+                {name: 'Model Pregio (M) (WLJ 4994)', location: 'Naza Kia'},
+                {name: 'Model Serena 2.0l (A) (JJY 8216)', location: 'Nissan'},
+                {name: 'Model Vanette Vpc22efu (JGU 4774)', location: 'Nissan'},
+                {name: 'Model Hiace (WUU 9673)', location: 'Toyota'},
+                {name: 'Model Hiace (WUU 9846)', location: 'Toyota'},
+                {name: 'Model Hiace (WUY 4468)', location: 'Toyota'},
+                {name: 'Model Hiace (WUY 6156)', location: 'Toyota'},
+                {name: 'Model Innova 2.0 E (Mt) (JLR 1679)', location: 'Toyota'}
             ]
         };
 
@@ -487,20 +260,23 @@
                 messageBox.classList.add('opacity-0', '-translate-y-20');
             }, 3000);
         }
+
         function showPage(page) {
             mainMenuPage.classList.remove('active');
             formPage.classList.remove('active');
             document.getElementById(page + 'Page').classList.add('active');
         }
+
+               // MODIFIED: Generate form fields with JPJ dropdown added
         function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
-                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
+                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Model & Registration No:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
-                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
+                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Brand:</label>
                         <input type="text" id="location_${index}" name="location_${index}" value="${asset.location}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
@@ -511,6 +287,15 @@
                             <option value="Not Functioning">Not Functioning</option>
                         </select>
                     </div>
+                    <!-- NEW: JPJ dropdown field -->
+                    <div>
+                        <label for="jpj_${index}" class="block text-sm font-medium text-gray-700 mb-1">JPJ:</label>
+                        <select id="jpj_${index}" name="jpj_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
+                            <option value="" disabled selected>-- Sila Pilih --</option>
+                            <option value="Pass">Pass</option>
+                            <option value="Fail">Fail</option>
+                        </select>
+                    </div>
                     <div>
                         <label for="remark_${index}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
                         <textarea id="remark_${index}" name="remark_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
@@ -519,15 +304,13 @@
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
-                    
-                    <button type="button" 
-                            class="btn-primary submit-single-asset-button w-full mt-4" 
-                            onclick="submitSingleAsset(this)">
+                    <button type="button" class="btn-primary submit-single-asset-button w-full mt-4" onclick="submitSingleAsset(this)">
                         Hantar Aset Ini Sahaja
                     </button>
                 </div>
             `;
         }
+
         window.showForm = function(asset) {
             formTitle.textContent = `FORM - ${asset}`;
             assetForm.dataset.assetType = asset;
@@ -539,35 +322,47 @@
             });
             showPage('form');
         };
+
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
+
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
+        // MODIFIED: Submit single asset with JPJ data
         async function submitSingleAsset(button) {
-            const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
+            const formDiv = button.closest('.asset-card-individual');
             const statusSelect = formDiv.querySelector('select[name^="status"]');
+            const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
             
             if (statusSelect.value === "") {
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
+            
+            if (jpjSelect.value === "") {
+                showMessage("Sila pilih JPJ status (Pass/Fail) sebelum menghantar.", false);
+                return;
+            }
+    
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
+    
             const assetType = assetForm.dataset.assetType;
-            // Extract data for the single asset
+            
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,
                 assetType: assetType,
                 assetName: formDiv.querySelector('input[name^="assetName"]').value,
                 status: statusSelect.value,
+                jpj: jpjSelect.value,
                 remark: formDiv.querySelector('textarea[name^="remark"]').value,
                 action: formDiv.querySelector('textarea[name^="action"]').value
             }];
-
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -575,13 +370,13 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
                 
-                // Reset/Kosongkan borang aset yang telah dihantar
-                formDiv.querySelector('select[name^="status"]').value = ''; 
-                formDiv.querySelector('textarea[name^="remark"]').value = ''; 
-                formDiv.querySelector('textarea[name^="action"]').value = ''; 
+                statusSelect.value = '';
+                jpjSelect.value = '';
+                formDiv.querySelector('textarea[name^="remark"]').value = '';
+                formDiv.querySelector('textarea[name^="action"]').value = '';
                 
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
@@ -592,46 +387,53 @@
             }
         }
         /////// TAMAT FUNGSI BARU ////////
+
         // FUNGSI ASAL: MENGENDALIKAN PENGHANTARAN BORANG UTAMA (SEMUA DIPILIH)
+        // MODIFIED: Submit all assets with JPJ data
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
+    
             const submitButton = event.target.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.textContent = 'Menghantar...';
-
+    
             const assetType = assetForm.dataset.assetType;
             const allForms = formFieldsContainer.querySelectorAll('div.bg-gray-50');
             const data = [];
-
+    
             allForms.forEach(formDiv => {
                 const statusSelect = formDiv.querySelector('select[name^="status"]');
-                // Hanya hantar data jika status telah dipilih
-                if (statusSelect.value !== "") {
+                const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
+                
+                if (statusSelect.value !== "" && jpjSelect.value !== "") {
                     const location = formDiv.querySelector('input[name^="location"]').value;
                     const assetName = formDiv.querySelector('input[name^="assetName"]').value;
                     const status = statusSelect.value;
+                    const jpj = jpjSelect.value;
                     const remark = formDiv.querySelector('textarea[name^="remark"]').value;
                     const action = formDiv.querySelector('textarea[name^="action"]').value;
-
+    
                     data.push({
                         location,
                         assetType,
                         assetName,
                         status,
+                        jpj,
                         remark,
                         action
                     });
                 }
             });
+    
             if (data.length === 0) {
-                showMessage("Sila isi sekurang-kurangnya satu borang.", false);
+                showMessage("Sila isi sekurang-kurangnya satu borang (Status dan JPJ mesti dipilih).", false);
                 submitButton.disabled = false;
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -639,11 +441,10 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage("Laporan berjaya dihantar!", true);
                 assetForm.reset();
                 showPage('mainMenu');
-
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
                 showMessage('Ralat semasa menghantar. Sila cuba lagi.', false);
@@ -654,7 +455,7 @@
         });
     </script>
     <div id="floating-action-buttons">
-                <a href="Panduan Menggunakan Website (Update Critical System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
+                <a href="Panduan Menggunakan Website (Vehicle Monitoring System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                     </svg>
