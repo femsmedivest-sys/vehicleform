@@ -145,7 +145,7 @@
             }
         }
 
-</style>
+        </style>
 </head>
 <button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
 
@@ -160,18 +160,20 @@
 
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
         <div id="mainMenuPage" class="page active">
-            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF VEHICLES:</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
+                <button class="asset-card" onclick="showForm('AMBULANCE')">AMBULANCE</button>
+                <button class="asset-card" onclick="showForm('NON AMBULANCE')">NON AMBULANCE</button>
+                <!-- <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AIR HANDLING UNIT')">AIR HANDLING UNIT</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
-                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
+                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button> 
                 <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
                 <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
                 <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
                 <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
-                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
+                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button> -->
             </div>
         </div>
 
@@ -217,191 +219,28 @@
         const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvV0Gyh7m128V1xEq01L3VhfU7lH3s9D44-R0OUKXT5nVI0y-149C0UOVXj7XZLRTSkQ/exec';//Write the API here
 
         const assetLists = {
-            'GENERATOR SET': [
-                {name: 'GENSET-1 (350kVa)', location: 'Blok A'}, 
-                {name: 'GENSET-2 (350kVa)', location: 'Blok A'},
-                {name: 'GENSET-1 (850kVa)', location: 'Blok B'},
-                {name: 'GENSET-2 (850kVa)', location: 'Blok B'}
+            'AMBULANCE': [
+                {name: 'Model Ford Transit Panel Van 2.2L (BRW3406)', location: 'Ford'},
+                {name: 'Model Ford Transit Panel Van 2.2L (BRW3411)', location: 'Ford'},
+                {name: 'Model Ford Transit Panel Van 2.2L (BRW3422)', location: 'Ford'},
+                {name: 'Model 35s15vh (W4721N)', location: 'Iveco Daily'},
+                {name: 'Model Jinbei Haise 2.4l (JMD2880)', location: 'Jinbei Haise'},
+                {name: 'Model Hiace Panel Slwb 2.7 Mt (BPG7242)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb (BKM6473)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb 2.7(P) M/T (BMA4713)', location: 'Toyota'}
             ],
 
-            'ELECTRICAL SUPPLY': [
-                {name: 'VCB-1', location: 'Bilik HT'},
-                {name: 'VCB-2', location: 'Bilik HT'},
-                {name: 'VCB-3', location: 'Bilik HT'},
-                {name: 'VCB-4', location: 'Bilik HT'},
-                {name: 'VCB-5', location: 'Bilik HT'},
-                {name: 'VCB-6', location: 'Bilik HT'},
-                {name: 'ACB-1', location: 'LV Blok A'},
-                {name: 'ACB-2', location: 'LV Blok A'},
-                {name: 'ACB-3', location: 'LV Blok A'},
-                {name: 'ACB-4', location: 'LV Blok A'},
-                {name: 'TX-1', location: 'Blok B'},
-                {name: 'TX-2', location: 'Blok B'},
-                {name: 'TX-3', location: 'Blok B'},
-                {name: 'ACB-1', location: 'LV Blok B'},
-                {name: 'ACB-2', location: 'LV Blok B'},
-                {name: 'ACB-3', location: 'LV Blok B'},
-                {name: 'ACB-4', location: 'LV Blok B'},
-                {name: 'ACB-5', location: 'LV Blok B'},
-                {name: 'ACB-6', location: 'LV Blok B'},
-                {name: 'ACB-7', location: 'LV Blok B'},
-                {name: 'ACB-1', location: 'MSSB Blok B'},
-                {name: 'ACB-2', location: 'MSSB Blok B'},
-                {name: 'ACB-3', location: 'MSSB Blok B'},
-                {name: 'ACB-4', location: 'MSSB Blok B'},
-                {name: 'TX-1', location: 'Transformer'},
-                {name: 'TX-2', location: 'Transformer'},
-                {name: 'TX-3', location: 'Transformer'},
-                {name: 'TX-4', location: 'Transformer'},
-                {name: 'MSB Essential', location: 'LV'},
-                {name: 'MSB Non Essential', location: 'LV'}
-            ],
-            
-            'AIR HANDLING UNIT': [
-                {name: 'AHU-A1', location: 'TBC'},
-                {name: 'AHU-A2', location: 'TBC'},
-                {name: 'AHU-A3', location: 'TBC'},
-                {name: 'AHU-A4', location: 'TBC'},
-                {name: 'AHU-4A', location: 'TBC'},
-                {name: 'AHU-4B', location: 'TBC'},
-                {name: 'AHU-5A', location: 'TBC'},
-                {name: 'AHU-5B', location: 'TBC'},
-                {name: 'AHU-6A', location: 'TBC'},
-                {name: 'AHU-6B', location: 'TBC'},
-                {name: 'AHU-(1-1)', location: 'TBC'},
-                {name: 'AHU-(1-2)', location: 'TBC'},
-                {name: 'AHU-(1-3)', location: 'TBC'},
-                {name: 'AHU-(1-4)', location: 'TBC'},
-                {name: 'AHU-(2-1)', location: 'TBC'},
-                {name: 'AHU-(2-2)', location: 'TBC'},
-                {name: 'AHU-(2-3)', location: 'TBC'},
-                {name: 'AHU-(2-4)', location: 'TBC'},
-                {name: 'AHU OT-(1-3)', location: 'TBC'},
-                {name: 'AHU OT-4', location: 'TBC'},
-                {name: 'AHU-(3-1)', location: 'TBC'},
-                {name: 'AHU-(3-2)', location: 'TBC'},
-             ],
-
-            'LIFT': [
-                {name: 'Lift-Otis-1', location: 'Block A'},
-                {name: 'Lift-Otis-2', location: 'Block A'},
-                {name: 'Lift-Otis-1', location: 'Block B'},
-                {name: 'Lift-Otis-2', location: 'Block B'},
-                {name: 'Lift-Otis-3', location: 'Block B'},
-                {name: 'Lift-Otis-4', location: 'Block B'}
-            ],
-            
-            'WATER SUPPLY SYSTEM': [
-                {name: 'Suction Tank Blok A  (RC) - 150,000 Liter', location: 'Pump House (PMP)'}, 
-                {name: 'Pump-1', location: 'Pump House'}, 
-                {name: 'Pump-2', location: 'Pump House'},
-
-                {name: 'Elevated Tank Blok (FRP) - 300,000 Liter', location: 'Plant Room 1 (PR1)'}, 
-
-                {name: 'Suction Tank Blok B  (FRP) - 135,000 Liter', location: 'M&E'}, 
-                {name: 'Pump-1', location: 'M&E - Pump House'}, 
-                {name: 'Pump-2', location: 'M&E - Pump House'},
-                
-                {name: 'Elevated Tank Blok B  (FRP) - 244,000 Liter', location: 'Plant Room 7 (PR7)'}
-            ],
-            
-            
-            'BAS SYSTEM': [
-                {name: 'Suction Tank A', location: 'TBC'},
-                {name: 'Suction Tank B', location: 'TBC'},
-                {name: 'Distribution Tank A', location: 'TBC'},
-                {name: 'Distribution Tank B', location: 'TBC'},
-            ],
-            
-            'CHILLER AND COOLING TOWER': [
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-1', location: 'Plantroom'},
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-2', location: 'Plantroom'},
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-3', location: 'Plantroom'},
-                {name: 'Screw-Chiller-1', location: 'Plantroom'},
-                {name: 'Screw-Chiller-2', location: 'Plantroom'},
-                {name: 'Screw-Chiller-3', location: 'Plantroom'},
-                {name: 'Cooling-Tower-1', location: 'Plantroom'},
-                {name: 'Cooling-Tower-2', location: 'Plantroom'},
-                {name: 'Cooling-Tower-3', location: 'Plantroom'},
-                {name: 'Cooling-Tower-4', location: 'Plantroom'},
-                {name: 'Cooling-Tower-5', location: 'Plantroom'},
-                {name: 'Cooling-Tower-6', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-5', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-6', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-5', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-6', location: 'Plantroom'}
-                //{name: 'Chiller-1', location: 'Blok A'}, 
-                //{name: 'Chiller-2', location: 'Blok A'},
-                //{name: 'Chiller-3', location: 'Blok A'},
-                //{name: 'Cooling Tower-1', location: 'Blok A'}, 
-                //{name: 'Cooling Tower-2', location: 'Blok A'},
-                //{name: 'Cooling Tower-3', location: 'Blok A'},
-                //{name: 'CHWP-1', location: 'Blok A'}, 
-                //{name: 'CHWP-2', location: 'Blok A'},
-                //{name: 'CHWP-3', location: 'Blok A'},
-                //{name: 'CWP-1', location: 'Blok A'},
-                //{name: 'CWP-2', location: 'Blok A'},
-                //{name: 'CWP-3', location: 'Blok A'},
-                //{name: 'Chiller-1', location: 'Blok B'}, 
-                //{name: 'Chiller-2', location: 'Blok B'},
-                //{name: 'Chiller-3', location: 'Blok B'},
-                //{name: 'Cooling Tower-1', location: 'Blok B'}, 
-                //{name: 'Cooling Tower-2', location: 'Blok B'},
-                //{name: 'Cooling Tower-3', location: 'Blok B'},
-                //{name: 'CHWP-1', location: 'Blok B'}, 
-                //{name: 'CHWP-2', location: 'Blok B'},
-                //{name: 'CHWP-3', location: 'Blok B'},
-                //{name: 'CWP-1', location: 'Blok B'},
-                //{name: 'CWP-2', location: 'Blok B'},
-                //{name: 'CWP-3', location: 'Blok B'}
-            ],
-            
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'Main Fire Alarm Panel', location: 'Control Room'},
-                {name: 'Hydrant Standby Pump', location: 'Hydrant'},
-            ],
-            
-            'AUTOCLAVE': [
-                {name: 'Freestading Autoclave-1', location: 'Main'}, 
-                {name: 'Freestading Autoclave-2', location: 'Main'},
-                {name: 'Freestading Autoclave-1', location: 'Lab'},
-                {name: 'Freestading Autoclave-2', location: 'Lab'},
-                {name: 'Freestading Autoclave-3', location: 'Lab'},
-            ],
-            
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'VIE Tank', location: 'Blok A'},
-                {name: 'Receiver Tank-1', location: 'Blok A'},
-                {name: 'Receiver Tank-2', location: 'Blok A'},
-                {name: 'Air Compressor-1', location: 'Blok A'},
-                {name: 'Air Compressor-2', location: 'Blok A'},
-                {name: 'Vacuum Pump-1', location: 'Blok A'},
-                {name: 'Vacuum Pump-2', location: 'Blok A'},
-                {name: 'Vacuum Pump-3', location: 'Blok A'},
-                {name: 'Air Dryers-1', location: 'Blok A'},
-                {name: 'Air Dryers-2', location: 'Blok A'},
-                {name: 'Air Filtration-1', location: 'Blok A'},
-                {name: 'Air Filtration-2', location: 'Blok A'},
-                {name: 'Cylinder Room', location: 'Blok A'},
-                {name: 'VIE Tank', location: 'Blok B'},
-                {name: 'Cylinder Room', location: 'Blok B'},
-                {name: 'Receiver Tank-1 (MA4 Room)', location: 'Blok B'},
-                {name: 'Receiver Tank-2 (MA4 Room)', location: 'Blok B'},
-                {name: 'Air Compressor-1 (MA4 Room)', location: 'Blok B'},
-                {name: 'Air Compressor-2 (MA4 Room)', location: 'Blok B'},
-                {name: 'Air Compressor-3 (MA4 Room)', location: 'Blok B'},
-                {name: 'Vacuum Pump-1 (Vacuum Room)', location: 'Blok B'},
-                {name: 'Vacuum Pump-2 (Vacuum Room)', location: 'Blok B'},
-                {name: 'AGSS-1', location: 'Blok B'},
-                {name: 'AGSS-2', location: 'Blok B'}
+             'NON AMBULANCE': [
+                {name: 'Model Exora Fl 1.6l Cvt (JRB9206)', location: 'Exora'},
+                {name: 'Model Fe638f (JKA4620)', location: 'Mitsubishi'},
+                {name: 'Model Fe71pb8srdg1 (JRD446)', location: 'Mitsubishi Fuso'},
+                {name: 'Model Fpgdh55 (WPL7809)', location: 'Naza Kia'},
+                {name: 'Model Nu41b (WQN 5651)', location: 'Nissan'},
+                {name: 'Model Serena 2.0l ( A ) (JUT1538)', location: 'Nissan'},
+                {name: 'Model Serena 2.0l (A) (JJL 6358)', location: 'Nissan'},
+                {name: 'Model Exora 1.6 Mt (JPP4509)', location: 'Proton Exora'},
+                {name: 'Model C4-32 - Tow Truck (Not Applicable)', location: 'Taylor Dunn'},
+                {name: 'Model Trh203r-Edmdkejh (JRC8493)', location: 'Toyota Hiace Window Van'}
             ]
         };
 
@@ -432,15 +271,16 @@
             document.getElementById(page + 'Page').classList.add('active');
         }
 
+               // MODIFIED: Generate form fields with JPJ dropdown added
         function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
-                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
+                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Model & Registration No:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
-                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
+                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Brand:</label>
                         <input type="text" id="location_${index}" name="location_${index}" value="${asset.location}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
@@ -451,6 +291,15 @@
                             <option value="Not Functioning">Not Functioning</option>
                         </select>
                     </div>
+                    <!-- NEW: JPJ dropdown field -->
+                    <div>
+                        <label for="jpj_${index}" class="block text-sm font-medium text-gray-700 mb-1">JPJ:</label>
+                        <select id="jpj_${index}" name="jpj_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
+                            <option value="" disabled selected>-- Sila Pilih --</option>
+                            <option value="Pass">Pass</option>
+                            <option value="Fail">Fail</option>
+                        </select>
+                    </div>
                     <div>
                         <label for="remark_${index}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
                         <textarea id="remark_${index}" name="remark_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
@@ -459,10 +308,7 @@
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
-                    
-                    <button type="button" 
-                            class="btn-primary submit-single-asset-button w-full mt-4" 
-                            onclick="submitSingleAsset(this)">
+                    <button type="button" class="btn-primary submit-single-asset-button w-full mt-4" onclick="submitSingleAsset(this)">
                         Hantar Aset Ini Sahaja
                     </button>
                 </div>
@@ -487,33 +333,40 @@
         });
 
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
+        // MODIFIED: Submit single asset with JPJ data
         async function submitSingleAsset(button) {
-            const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
+            const formDiv = button.closest('.asset-card-individual');
             const statusSelect = formDiv.querySelector('select[name^="status"]');
+            const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
             
             if (statusSelect.value === "") {
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
-
+            
+            if (jpjSelect.value === "") {
+                showMessage("Sila pilih JPJ status (Pass/Fail) sebelum menghantar.", false);
+                return;
+            }
+    
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
-
+    
             const assetType = assetForm.dataset.assetType;
             
-            // Extract data for the single asset
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,
                 assetType: assetType,
                 assetName: formDiv.querySelector('input[name^="assetName"]').value,
                 status: statusSelect.value,
+                jpj: jpjSelect.value,
                 remark: formDiv.querySelector('textarea[name^="remark"]').value,
                 action: formDiv.querySelector('textarea[name^="action"]').value
             }];
-
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -521,13 +374,13 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
                 
-                // Reset/Kosongkan borang aset yang telah dihantar
-                formDiv.querySelector('select[name^="status"]').value = ''; 
-                formDiv.querySelector('textarea[name^="remark"]').value = ''; 
-                formDiv.querySelector('textarea[name^="action"]').value = ''; 
+                statusSelect.value = '';
+                jpjSelect.value = '';
+                formDiv.querySelector('textarea[name^="remark"]').value = '';
+                formDiv.querySelector('textarea[name^="action"]').value = '';
                 
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
@@ -540,47 +393,51 @@
         /////// TAMAT FUNGSI BARU ////////
 
         // FUNGSI ASAL: MENGENDALIKAN PENGHANTARAN BORANG UTAMA (SEMUA DIPILIH)
+        // MODIFIED: Submit all assets with JPJ data
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
+    
             const submitButton = event.target.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.textContent = 'Menghantar...';
-
+    
             const assetType = assetForm.dataset.assetType;
             const allForms = formFieldsContainer.querySelectorAll('div.bg-gray-50');
             const data = [];
-
+    
             allForms.forEach(formDiv => {
                 const statusSelect = formDiv.querySelector('select[name^="status"]');
-                // Hanya hantar data jika status telah dipilih
-                if (statusSelect.value !== "") {
+                const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
+                
+                if (statusSelect.value !== "" && jpjSelect.value !== "") {
                     const location = formDiv.querySelector('input[name^="location"]').value;
                     const assetName = formDiv.querySelector('input[name^="assetName"]').value;
                     const status = statusSelect.value;
+                    const jpj = jpjSelect.value;
                     const remark = formDiv.querySelector('textarea[name^="remark"]').value;
                     const action = formDiv.querySelector('textarea[name^="action"]').value;
-
+    
                     data.push({
                         location,
                         assetType,
                         assetName,
                         status,
+                        jpj,
                         remark,
                         action
                     });
                 }
             });
-
+    
             if (data.length === 0) {
-                showMessage("Sila isi sekurang-kurangnya satu borang.", false);
+                showMessage("Sila isi sekurang-kurangnya satu borang (Status dan JPJ mesti dipilih).", false);
                 submitButton.disabled = false;
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
-
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -588,11 +445,10 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage("Laporan berjaya dihantar!", true);
                 assetForm.reset();
                 showPage('mainMenu');
-
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
                 showMessage('Ralat semasa menghantar. Sila cuba lagi.', false);
@@ -603,7 +459,7 @@
         });
     </script>
     <div id="floating-action-buttons">
-                <a href="Panduan Menggunakan Website (Update Critical System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
+                <a href="Panduan Menggunakan Website (Vehicle Monitoring System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                     </svg>
@@ -612,11 +468,3 @@
         </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
