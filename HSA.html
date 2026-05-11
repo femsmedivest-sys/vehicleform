@@ -24,7 +24,8 @@
         .page.active {
             display: block;
         }
-        /* KOD YANG TELAH DIBETULKAN: Menggantikan @apply dengan CSS Standard */
+
+        /* KOD YANG TELAH DIBETULKAN: Menggantikan @ apply dengan CSS Standard */
         .asset-card {
             background-color: rgba(203, 205, 205, 0.4); /* bg-white */
             padding: 1.5rem; /* p-6 */
@@ -102,6 +103,7 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         /* ========================
         // Gaya Floating Button
         // ========================*/
@@ -142,46 +144,46 @@
                 display: none !important; /* Sembunyikan teks pada mobile */
             }
         }
-    </style>
+
+        </style>
 </head>
 <button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
-    <!-- Pop-up Mesej -->
+
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
-    <!-- Logos Bersebelahan -->
+
     <div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible" class="h-16 w-auto mb-4 sm:mb-0">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest" class="h-16 w-auto">
     </div>
-    <!-- Kontena Utama -->
+
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
-        <!-- Halaman Menu Utama -->
         <div id="mainMenuPage" class="page active">
-            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-                <!-- Butang untuk setiap jenis aset -->
-                <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF VEHICLES:</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <button class="asset-card" onclick="showForm('AMBULANCE')">AMBULANCE</button>
+                <button class="asset-card" onclick="showForm('NON AMBULANCE')">NON AMBULANCE</button>
+                <!-- <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AIR HANDLING UNIT')">AIR HANDLING UNIT</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
-                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
+                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button> 
                 <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
                 <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
                 <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
                 <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
-                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
+                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button> -->
             </div>
         </div>
-         <!-- Halaman Borang Dinamik -->
+
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
                 <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Medan borang akan ditambah di sini secara dinamik -->    
-                </div>
-                <!-- Butang Hantar dan Back -->
+                    </div>
+
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Kembali ke Menu Utama
@@ -194,9 +196,8 @@
         </div>
     </div>
 
-        <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
-        <script>
-            // Get the button:
+    <script>
+        // Get the button:
             let mybutton = document.getElementById("myBtn");
 
             // When the user scrolls down 20px from the top of the document, show the button
@@ -215,245 +216,45 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAgWFABJebLSW1hRKemrOlxvKo3uoPjKRDVumQppG7mBWwaKMCZmxwvRiBR0jZyRbLLA/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAgWFABJebLSW1hRKemrOlxvKo3uoPjKRDVumQppG7mBWwaKMCZmxwvRiBR0jZyRbLLA/exec';//Write the API here
 
         const assetLists = {
-            'GENERATOR SET': [
-                {name: 'GenSet CTP Bangunan Induk-(1200kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet CTP Chiller-(800kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet CTP(1)-(500kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet CTP(2)-(380kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet CTP(3)-(278kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet CTP Cabin-(380kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet Patologi-(1500kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet Wad Perubatan Perempuan 1-(350kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet PE Poliklinik(350kVA)', location: 'Bilik Genset'}, 
-                {name: 'GenSet Hematologi-(275kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet TPN-(220kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet Kuarters PSM-(150kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet Rumah Mayat-1 (120kVA)', location: 'Bilik Genset'},
-                {name: 'GenSet Rumah Mayat-2 (120kVA)', location: 'Bilik Genset'},
+            'AMBULANCE': [
+                {name: 'Model Ford Transit Panel Van 2.2L (BRW3407)', location: 'Ford'},
+                {name: 'Model Ford Transit Panel Van 2.2L (BRW3410)', location: 'Ford'},
+                {name: 'Model Toyota Hiace SLWB - Advance (BPG3081)', location: 'Hiace'},
+                {name: 'Model IVECO DAILY 35S15/E3 V/P 4X2 (BPL4724)', location: 'Iveco'},
+                {name: 'Model IVECO DAILY 35S15/E3 V/P 4X2 (BPL8794)', location: 'Iveco'},
+                {name: 'Model IVECO DAILY 35S15/E3 V/P 4X2 (BPM104)', location: 'Iveco'},
+                {name: 'Model Iveco Daily 35s15vh (W4298N)', location: 'Iveco'},
+                {name: 'Model Hiace Panel Slwb 2.7 Mt (BPG3591)', location: 'Toyota'},
+                {name: 'Model Hiace Panel Slwb 2.7 Mt (BPG3604)', location: 'Toyota'},
+                {name: 'Model Hiace Panel Slwb 2.7 Mt (BPG5493)', location: 'Toyota'},
+                {name: 'Model Hiace Panel Slwb 2.7mt (BNP7362)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb 2.7 (P) A/T (BKK158)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb 2.7 (P) A/T (BKK2748)', location: 'Toyota'},
+                {name: 'Model Trh203r-Edmdke (WVG 7192)', location: 'Toyota'},
+                {name: 'Model Slwb 2.7mt (BMA 4096)', location: 'Toyota Hiace'},
+                {name: 'Model Slwb 2.7mt (BMA 4097)', location: 'Toyota Hiace'},
+                {name: 'Model Ldv Maxus (WUT 1319)', location: 'Weststar'}
             ],
 
-            'ELECTRICAL SUPPLY': [
-                {name: 'VCB-1', location: 'HT Intake-1'},
-                {name: 'VCB-2', location: 'HT Intake-1'},
-                {name: 'VCB', location: 'HT Patologi'},
-                {name: 'VCB', location: 'HT PE-2A'},
-                {name: 'VCB', location: 'HT PE-CTP'},
-                {name: 'VCB-1', location: 'HT ROOM'},
-                {name: 'VCB-2', location: 'HT ROOM'},
-                {name: 'VCB-3', location: 'HT ROOM'},
-                {name: 'VCB-4', location: 'HT ROOM'},
-                {name: 'VCB-5', location: 'HT ROOM'},
-                {name: 'VCB-6', location: 'HT ROOM'},
-                {name: 'VCB-7', location: 'HT ROOM'},
-                {name: 'VCB-8', location: 'HT ROOM'},
-                {name: 'VCB-9', location: 'HT ROOM'},
-                {name: 'VCB-10', location: 'HT ROOM'},
-                {name: 'VCB-11', location: 'HT ROOM'},
-                {name: 'VCB-12', location: 'HT ROOM'},
-                {name: 'TX-1', location: 'Transformer'},
-                {name: 'TX-2', location: 'Transformer'},
-                {name: 'TX-3', location: 'Transformer'},
-                {name: 'TX-4', location: 'Transformer'},
-                {name: 'TX-5', location: 'Transformer'},
-                {name: 'TX-6', location: 'Transformer'},
-                {name: 'TX-7', location: 'Transformer'},
-                {name: 'TX-8', location: 'Transformer'},
-                {name: 'TX-9', location: 'Transformer'},
-                {name: 'TX-10', location: 'Transformer'},
-                {name: 'TX-11', location: 'Transformer'},
-                {name: 'TX-12', location: 'Transformer'},
-                {name: 'TX-13', location: 'Transformer'},
-                {name: 'TX-14', location: 'Transformer'},
-                {name: 'ACB', location: 'MSB-Patologi'},
-                {name: 'ACB', location: 'MSB PE-2A'},
-                {name: 'ACB', location: 'MSB PE-3'},
-                {name: 'ACB', location: 'MSB PE-4'},
-                {name: 'ACB', location: 'MSB Main Block-1'},
-                {name: 'ACB', location: 'LV OT'},
-                {name: 'ACB', location: 'LV PP'},
-                {name: 'ACB', location: 'BLB'}
-            ],
-
-            'AIR HANDLING UNIT': [
-                {name: 'AHU-1', location:'Bilik AHU'},
-                {name: 'AHU-2', location:'Bilik AHU'},
-                {name: 'AHU-3', location:'Bilik AHU'},
-                {name: 'AHU-4', location:'Bilik AHU'},
-                {name: 'AHU-5', location:'Bilik AHU'},
-                {name: 'AHU-6', location:'Bilik AHU'},
-                {name: 'AHU-7', location:'Bilik AHU'},
-                {name: 'AHU-8', location:'Bilik AHU'},
-                {name: 'AHU-9', location:'Bilik AHU'},
-                {name: 'AHU-10', location:'Bilik AHU'},
-                {name: 'AHU-11', location:'Bilik AHU'},
-                {name: 'AHU-12', location:'Bilik AHU'},
-                {name: 'AHU-13', location:'Bilik AHU'},
-                {name: 'AHU-14', location:'Bilik AHU'},
-                {name: 'AHU-15', location:'Bilik AHU'},
-                {name: 'AHU-16', location:'Bilik AHU'},
-                {name: 'AHU-17', location:'Bilik AHU'},
-                {name: 'AHU-18', location:'Bilik AHU'},
-                {name: 'AHU-19', location:'Bilik AHU'},
-                {name: 'AHU-20', location:'Bilik AHU'},
-                {name: 'AHU-21', location:'Bilik AHU'},
-                {name: 'AHU-22', location:'Bilik AHU'},
-                {name: 'AHU-23', location:'Bilik AHU'},
-                {name: 'AHU-24', location:'Bilik AHU'},
-                {name: 'AHU-25', location:'Bilik AHU'},
-                {name: 'AHU-26', location:'Bilik AHU'},
-                {name: 'AHU-27', location:'Bilik AHU'},
-                {name: 'AHU-28', location:'Bilik AHU'}
-            ],
-
-            'LIFT': [
-                {name: 'Lift-Dover-1', location: 'Bangunan  Hospital 1'},
-                {name: 'Lift-Dover-2', location: 'Bangunan  Hospital 1'},
-                {name: 'Lift-Dover-3', location: 'Bangunan  Hospital 1'},
-                {name: 'Lift-Kone-Elevator-1', location: 'Bangunan  Hospital 2'},
-                {name: 'Lift-Kone-Elevator-2', location: 'Bangunan  Hospital 2'},
-                {name: 'Lift-Kone-Elevator-3', location: 'Bangunan  Hospital 2'},
-                {name: 'Lift-Kone-Elevator-4', location: 'Bangunan  Hospital 2'},
-                {name: 'Lift-Otis-1', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-2', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-3', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-4', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-5', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-6', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-7', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-8', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Otis-9', location: 'Bangunan  Hospital 3'},
-                {name: 'Lift-Schindler-1', location: 'Bangunan  Hospital 4'},
-                {name: 'Lift-Schindler-2', location: 'Bangunan  Hospital 4'},
-                {name: 'Lift-Sigma-1', location: 'Bangunan  Hospital 5'},
-                {name: 'Lift-Sigma-2', location: 'Bangunan  Hospital 5'},
-                {name: 'Lift-Sigma-3', location: 'Bangunan  Hospital 5'},
-                {name: 'Lift-Sigma-4', location: 'Bangunan  Hospital 5'},
-                {name: 'Lift-Sigma-5', location: 'Bangunan  Hospital 5'},
-                {name: 'Lift-Toshiba-1', location: 'Bangunan  Hospital 6'},
-                {name: 'Lift-Toshiba-2', location: 'Bangunan  Hospital 6'},
-                {name: 'Lift-Toshiba-3', location: 'Bangunan  Hospital 6'},
-                {name: 'Lift-Toshiba-4', location: 'Bangunan  Hospital 6'},
-                {name: 'Lift-Toshiba-5', location: 'Bangunan  Hospital 6'},
-                {name: 'Lift-Toshiba-6', location: 'Bangunan  Hospital 6'},
-                {name: 'Lift-Toshiba-7', location: 'Bangunan  Hospital 6'},
-                {name: 'Lift-Toshiba-8', location: 'Bangunan  Hospital 6'}
-            ],
-            
-             'WATER SUPPLY SYSTEM': [
-                {name: 'Main Eleveted Tank  (REINFORCED CONCRETE ) - 2,000,000 Liter', location: 'Near Morgue'}, 
-                {name: 'Pump-1', location: 'Pump House'}, 
-                {name: 'Pump-2', location: 'Pump House'}
-            ],
-            
-            'BAS SYSTEM': [
-                {name: 'TBC', location: 'TBC'}
-            ],
-            
-            'CHILLER AND COOLING TOWER': [
-                {name: 'Water-System-Centrifugal-Chiller-1', location: 'Plantroom'},
-                {name: 'Water-System-Centrifugal-Chiller-2', location: 'Plantroom'},
-                {name: 'Water-System-Centrifugal-Chiller-3', location: 'Plantroom'},
-                {name: 'Water-System-Centrifugal-Chiller-4', location: 'Plantroom'},
-                {name: 'Water-System-Centrifugal-Chiller-5', location: 'Plantroom'},
-                {name: 'Water-System-Centrifugal-Chiller-6', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-1', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-2', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-3', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-4', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-5', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-6', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-7', location: 'Plantroom'},
-                {name: 'Air-Cooled-Chiller-8', location: 'Plantroom'},
-                {name: 'Cooling-Tower-1', location: 'Plantroom'},
-                {name: 'Cooling-Tower-2', location: 'Plantroom'},
-                {name: 'Cooling-Tower-3', location: 'Plantroom'},
-                {name: 'Cooling-Tower-4', location: 'Plantroom'},
-                {name: 'Cooling-Tower-5', location: 'Plantroom'},
-                {name: 'Cooling-Tower-6', location: 'Plantroom'},
-                {name: 'Cooling-Tower-7', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-5', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-6', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-7', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-8', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-9', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-10', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-11', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-12', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-13', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-14', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-15', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-16', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-17', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-18', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-19', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-20', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-21', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-22', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-23', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-5', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-6', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-7', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-8', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-9', location: 'Plantroom'} 
-              //{name: 'Chiller-1', location: 'Main Block'},
-              // {name: 'Chiller-2', location: 'Main Block'},
-              // {name: 'Chiller-3', location: 'Main Block'},
-              // {name: 'CHWP-1', location: 'Main Block'},
-              // {name: 'CHWP-2', location: 'Main Block'},
-              //  {name: 'CHWP-3', location: 'Main Block'},
-              // {name: 'CWP-1', location: 'Main Block'},
-              // {name: 'CWP-2', location: 'Main Block'},
-              //  {name: 'CWP-3', location: 'Main Block'},
-              //  {name: 'Cooling Tower-1', location: 'Main Block'},
-              //  {name: 'Cooling Tower-2', location: 'Main Block'},
-              //  {name: 'Cooling Tower-3', location: 'Main Block'},
-
-            ],
-            
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'TBC', location: 'TBC'}
-            ],
-            
-            'AUTOCLAVE': [
-                {name: 'Autoclave-1', location: 'Pathology'},
-                {name: 'Autoclave-2', location: 'Pathology'},
-                {name: 'Autoclave-3', location: 'Pathology'},
-                {name: 'Autoclave-4', location: 'Pathology'},
-                {name: 'Autoclave-1', location: 'CSSD'},
-                {name: 'Autoclave-2', location: 'CSSD'},
-                {name: 'Autoclave-3', location: 'CSSD'},
-                {name: 'Autoclave-4', location: 'CSSD'}
-            ],
-            
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Compressor-1', location: 'MA4 Room'},
-                {name: 'Compressor-2', location: 'MA4 Room'},
-                {name: 'Compressor-3', location: 'MA4 Room'},
-                {name: 'Pressure-1', location: 'MA4 Room'},
-                {name: 'Dryer-1', location: 'MA4 Room'},
-                {name: 'Dryer-2', location: 'MA4 Room'},
-                {name: 'Compressor-1', location: 'SA7 Room'},
-                {name: 'Compressor-2', location: 'SA7 Room'},
-                {name: 'Compressor-3', location: 'SA7 Room'},
-                {name: 'Pressure-1', location: 'SA7 Room'},
-                {name: 'Dryer-1', location: 'SA7 Room'},
-                {name: 'Dryer-2', location: 'SA7 Room'},
-                {name: 'Air Reciever Tank', location: 'Vacumm Room'},
-                {name: 'Vacuum Pump-1', location: 'Vacuum Room'},
-                {name: 'Vacuum Pump-2', location: 'Vacuum Room'},
-                {name: 'Vacuum Pump-3', location: 'Vacuum Room'},
-                {name: 'Vacuum Pump-4', location: 'Vacuum Room'},
+             'NON AMBULANCE': [
+                {name: 'Model Placer-XA4 (JTC3163)', location: 'China Auto Manufacturers'},
+                {name: 'Model Wu41or-hkmm83 (Ubs) (JJM 311)', location: 'Hino'},
+                {name: 'Model Nlr55uee (JRD3596)', location: 'Isuzu'},
+                {name: 'Model Fpgdh55 (JPT3904)', location: 'Kia Pregio'},
+                {name: 'Model Fuso Fe71pb8srdg1 (JQK 8594)', location: 'Mitsubishi'},
+                {name: 'Model Pregio (JKL 9772)', location: 'Naza Kia'},
+                {name: 'Model X-Trail 2.0L (A) (JJM 1709)', location: 'Nissan'},
+                {name: 'Model Exora Fz6ynsxrmad-Mhc (JQL 8519)', location: 'Proton'},
+                {name: 'Model Proton Saga 1.3 Manual (JLV 5242)', location: 'Proton'},
+                {name: 'Model Hiace Kdh202r-Edmdyead (JQL 1454)', location: 'Toyota'},
+                {name: 'Model HILUX DOUBLE CAB 2.8LE (JTB8429)', location: 'Toyota'},
+                {name: 'Model Innova Tgn40rgkmdke (JNC 3914)', location: 'Toyota'},
+                {name: 'Model Kdh200r-Rbmdyejc (JRF4094)', location: 'Toyota'},
+                {name: 'Model Kdh202r-Edmdyejd (JRE5409)', location: 'Toyota'},
+                {name: 'Model Kdh200r-Rbmdye (JTV9794)', location: 'Toyota Hiace'}
             ]
         };
 
@@ -477,20 +278,23 @@
                 messageBox.classList.add('opacity-0', '-translate-y-20');
             }, 3000);
         }
+
         function showPage(page) {
             mainMenuPage.classList.remove('active');
             formPage.classList.remove('active');
             document.getElementById(page + 'Page').classList.add('active');
         }
+
+               // MODIFIED: Generate form fields with JPJ dropdown added
         function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
-                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
+                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Model & Registration No:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
-                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
+                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Brand:</label>
                         <input type="text" id="location_${index}" name="location_${index}" value="${asset.location}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
@@ -501,6 +305,15 @@
                             <option value="Not Functioning">Not Functioning</option>
                         </select>
                     </div>
+                    <!-- NEW: JPJ dropdown field -->
+                    <div>
+                        <label for="jpj_${index}" class="block text-sm font-medium text-gray-700 mb-1">JPJ:</label>
+                        <select id="jpj_${index}" name="jpj_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
+                            <option value="" disabled selected>-- Sila Pilih --</option>
+                            <option value="Pass">Pass</option>
+                            <option value="Fail">Fail</option>
+                        </select>
+                    </div>
                     <div>
                         <label for="remark_${index}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
                         <textarea id="remark_${index}" name="remark_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
@@ -509,15 +322,13 @@
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
-
-                    <button type="button" 
-                            class="btn-primary submit-single-asset-button w-full mt-4" 
-                            onclick="submitSingleAsset(this)">
+                    <button type="button" class="btn-primary submit-single-asset-button w-full mt-4" onclick="submitSingleAsset(this)">
                         Hantar Aset Ini Sahaja
                     </button>
                 </div>
             `;
         }
+
         window.showForm = function(asset) {
             formTitle.textContent = `FORM - ${asset}`;
             assetForm.dataset.assetType = asset;
@@ -529,35 +340,47 @@
             });
             showPage('form');
         };
+
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
+
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
+        // MODIFIED: Submit single asset with JPJ data
         async function submitSingleAsset(button) {
-            const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
+            const formDiv = button.closest('.asset-card-individual');
             const statusSelect = formDiv.querySelector('select[name^="status"]');
+            const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
             
             if (statusSelect.value === "") {
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
+            
+            if (jpjSelect.value === "") {
+                showMessage("Sila pilih JPJ status (Pass/Fail) sebelum menghantar.", false);
+                return;
+            }
+    
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
+    
             const assetType = assetForm.dataset.assetType;
-            // Extract data for the single asset
+            
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,
                 assetType: assetType,
                 assetName: formDiv.querySelector('input[name^="assetName"]').value,
                 status: statusSelect.value,
+                jpj: jpjSelect.value,
                 remark: formDiv.querySelector('textarea[name^="remark"]').value,
                 action: formDiv.querySelector('textarea[name^="action"]').value
             }];
-
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -565,13 +388,13 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
                 
-                // Reset/Kosongkan borang aset yang telah dihantar
-                formDiv.querySelector('select[name^="status"]').value = ''; 
-                formDiv.querySelector('textarea[name^="remark"]').value = ''; 
-                formDiv.querySelector('textarea[name^="action"]').value = ''; 
+                statusSelect.value = '';
+                jpjSelect.value = '';
+                formDiv.querySelector('textarea[name^="remark"]').value = '';
+                formDiv.querySelector('textarea[name^="action"]').value = '';
                 
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
@@ -582,46 +405,53 @@
             }
         }
         /////// TAMAT FUNGSI BARU ////////
+
         // FUNGSI ASAL: MENGENDALIKAN PENGHANTARAN BORANG UTAMA (SEMUA DIPILIH)
+        // MODIFIED: Submit all assets with JPJ data
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
+    
             const submitButton = event.target.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.textContent = 'Menghantar...';
-
+    
             const assetType = assetForm.dataset.assetType;
             const allForms = formFieldsContainer.querySelectorAll('div.bg-gray-50');
             const data = [];
-
+    
             allForms.forEach(formDiv => {
                 const statusSelect = formDiv.querySelector('select[name^="status"]');
-                // Hanya hantar data jika status telah dipilih
-                if (statusSelect.value !== "") {
+                const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
+                
+                if (statusSelect.value !== "" && jpjSelect.value !== "") {
                     const location = formDiv.querySelector('input[name^="location"]').value;
                     const assetName = formDiv.querySelector('input[name^="assetName"]').value;
                     const status = statusSelect.value;
+                    const jpj = jpjSelect.value;
                     const remark = formDiv.querySelector('textarea[name^="remark"]').value;
                     const action = formDiv.querySelector('textarea[name^="action"]').value;
-
+    
                     data.push({
                         location,
                         assetType,
                         assetName,
                         status,
+                        jpj,
                         remark,
                         action
                     });
                 }
             });
+    
             if (data.length === 0) {
-                showMessage("Sila isi sekurang-kurangnya satu borang.", false);
+                showMessage("Sila isi sekurang-kurangnya satu borang (Status dan JPJ mesti dipilih).", false);
                 submitButton.disabled = false;
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -629,11 +459,10 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage("Laporan berjaya dihantar!", true);
                 assetForm.reset();
                 showPage('mainMenu');
-
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
                 showMessage('Ralat semasa menghantar. Sila cuba lagi.', false);
@@ -644,7 +473,7 @@
         });
     </script>
     <div id="floating-action-buttons">
-                <a href="Panduan Menggunakan Website (Update Critical System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
+                <a href="Panduan Menggunakan Website (Vehicle Monitoring System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                     </svg>
@@ -653,12 +482,3 @@
         </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
