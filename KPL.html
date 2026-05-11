@@ -24,7 +24,8 @@
         .page.active {
             display: block;
         }
-        /* KOD YANG TELAH DIBETULKAN: Menggantikan @apply dengan CSS Standard */
+
+        /* KOD YANG TELAH DIBETULKAN: Menggantikan @ apply dengan CSS Standard */
         .asset-card {
             background-color: rgba(203, 205, 205, 0.4); /* bg-white */
             padding: 1.5rem; /* p-6 */
@@ -40,6 +41,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
+
         .btn-primary {
             background-color: rgb(4, 0, 126); /* bg-blue-600 */
             color: rgb(255, 255, 255); /* text-white */
@@ -53,6 +55,7 @@
         .btn-primary:hover {
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
+
         .btn-secondary {
             background-color: #e5e7eb; /* bg-gray-200 */
             color: #374151; /* text-gray-800 */
@@ -66,11 +69,13 @@
         .btn-secondary:hover {
             background-color: #d1d5db; /* hover:bg-gray-300 */
         }
+
         /* GAYA BARU: Hanya untuk butang "Hantar Aset Ini Sahaja" */
         .submit-single-asset-button {
             background-color: #ebebeb; /* Contoh: Warna Jingga (Orange) */
             color: #374151; /* Teks putih */
         }
+
         .submit-single-asset-button:hover {
             background-color: #25ff5c; /* Contoh: Warna Jingga Gelap semasa hover */
         }
@@ -93,11 +98,13 @@
         #myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-         /* ========================
+
+        /* ========================
         // Gaya Floating Button
         // ========================*/
 
@@ -137,46 +144,46 @@
                 display: none !important; /* Sembunyikan teks pada mobile */
             }
         }
-    </style>
+
+        </style>
 </head>
 <button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
-    <!-- Pop-up Mesej -->
+
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
-    <!-- Logos Bersebelahan -->
+
     <div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible" class="h-16 w-auto mb-4 sm:mb-0">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest" class="h-16 w-auto">
     </div>
-    <!-- Kontena Utama -->
+
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
-        <!-- Halaman Menu Utama -->
         <div id="mainMenuPage" class="page active">
-            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-                <!-- Butang untuk setiap jenis aset -->
-                <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF VEHICLES:</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <button class="asset-card" onclick="showForm('AMBULANCE')">AMBULANCE</button>
+                <button class="asset-card" onclick="showForm('NON AMBULANCE')">NON AMBULANCE</button>
+                <!-- <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AIR HANDLING UNIT')">AIR HANDLING UNIT</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
-                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
+                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button> 
                 <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
                 <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
                 <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
                 <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
-                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
+                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button> -->
             </div>
         </div>
-        <!-- Halaman Borang Dinamik -->
+
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
                 <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Medan borang akan ditambah di sini secara dinamik -->    
-                </div>
-                <!-- Butang Hantar dan Back -->
+                    </div>
+
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Kembali ke Menu Utama
@@ -189,7 +196,6 @@
         </div>
     </div>
 
-    <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
     <script>
         // Get the button:
             let mybutton = document.getElementById("myBtn");
@@ -210,110 +216,33 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvaosSv4j72-m2PiTFIx-rmIJGb0kYECUQrecAYVuFzL5xx-kCMsSqfM3zwY5rwU3S/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvaosSv4j72-m2PiTFIx-rmIJGb0kYECUQrecAYVuFzL5xx-kCMsSqfM3zwY5rwU3S/exec';//Write the API here
 
         const assetLists = {
-            'GENERATOR SET': [
-                {name: 'GenSet 350kVa', location: 'Generator Room'}, 
-                {name: 'GenSet 350kVA', location: 'Generator Room'},
-                {name: 'MSB/ATS', location: 'Generator Room'},
+            'AMBULANCE': [
+                {name: 'Model Ford Transit Panel Van 2.2L (BRV8069)', location: 'Ford'},
+                {name: 'Model Iveco Daily 35s15vh (BPL8814)', location: 'Iveco'},
+                {name: 'Model Hiace (WC4381H)', location: 'Toyota'},
+                {name: 'Model Hiace (WC4600H)', location: 'Toyota'},
+                {name: 'Model Hiace Panel Slwb 2 7 Mt (BPG1635)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb (BKH 874)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb (BLQ 4394)', location: 'Toyota'},
+                {name: 'Model Hiace Slwb 2.7 Mt (BPG1150)', location: 'Toyota'}
             ],
 
-            'ELECTRICAL SUPPLY': [
-                {name: 'LV-1', location: 'Electrical Supply Room'},
-                {name: 'LV-2', location: 'Electrical Supply Room'}
-
-            ],
-
-            'AIR HANDLING UNIT': [
-                {name: 'AHU MAT/LDU', location: 'Platroom-1'},
-                {name: 'AHU XRAY', location: 'Platroom-1'},
-                {name: 'AHU CSSD', location: 'Platroom-1'},
-                {name: 'AHU SCN/WAD 12', location: 'Platroom-1'},
-                {name: 'AHU ICU/WAD 11', location: 'Platroom-1'},
-                {name: 'AHU ANE', location: 'Platroom-1'},                
-                {name: 'AHU FARMASI ANEKA', location: 'Platroom-2'},
-                {name: 'AHU KLINIK PAKAR 1', location: 'Platroom-2'},
-                {name: 'AHU LAB/FISIO', location: 'Platroom-2'},
-                {name: 'AHU WAD 7/8/9/10', location: 'Platroom-2'},                
-                {name: 'AHU KLINIK PAKAR2/3', location: 'Platroom-3'},
-                {name: 'AHU WAD1/2', location: 'Platroom-3'},
-                {name: 'AHU WAD 3/4/5/6', location: 'Platroom-3'},                
-                {name: 'AHU ADMIN ATAS', location: 'Platroom-4'}, 
-                {name: 'AHU KLINIK PAKAR 4', location: 'Platroom-4'},
-                {name: 'AHU KLINIK PAKAR 5', location: 'Platroom-4'},
-                {name: 'AHU ADMIN BAWAH', location: 'Platroom-4'}
-            ],
-
-            'LIFT': [
-                {name: 'Lift-Otis-1', location: 'Main Building'},
-                {name: 'Lift-Otis-2', location: 'Main Building'}
-            ],
-
-             'WATER SUPPLY SYSTEM': [
-                {name: 'Primary Tank (Concrete)', location: 'Main Gate'}, 
-                {name: 'Pump-1', location: 'Pump House Near Main Gate'}, 
-                {name: 'Pump-2', location: 'Pump House Near Main Gate'},
-
-                {name: 'Secondary Tank (Concrete)', location: 'Behind Main Building'}, 
-                {name: 'Pump-1', location: 'Pump House near Main Building'}, 
-                {name: 'Pump-2', location: 'Pump House near Main Building'},
-
-                {name: 'Elevated Tank (FRP)', location: 'Behind Main Building'}, 
-                {name: 'Transfer Tank (FRP)', location: 'Main Building'}
-            ],
-            
-            // 'WATER SUPPLY SYSTEM': [
-            //     {name: 'Pump No-1 (Main Tank)', location: 'Pump House'},
-            //     {name: 'Pump No-2 (Main Tank)', location: 'Pump House'},
-            //     {name: 'Pump No-1 (Secondary Tank)', location: 'Pump House'},
-            //     {name: 'Pump No-2 (Secondary Tank)', location: 'Pump House'},
-            // ],
-            
-            'BAS SYSTEM': [
-                {name: 'BAS System', location: 'Engineering Block'}
-            ],
-            
-            'CHILLER AND COOLING TOWER': [
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-1', location: 'Engineering Block'},
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-2', location: 'Engineering Block'},
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-3', location: 'Engineering Block'},
-                {name: 'Cooling-Tower-1', location: 'Engineering Block'},
-                {name: 'Cooling-Tower-2', location: 'Engineering Block'},
-                {name: 'Cooling-Tower-3', location: 'Engineering Block'},
-                {name: 'Primary-Chilled-Water-Pump-1', location: 'Engineering Block'},
-                {name: 'Primary-Chilled-Water-Pump-2', location: 'Engineering Block'},
-                {name: 'Primary-Chilled-Water-Pump-3', location: 'Engineering Block'},
-                {name: 'Primary-Condensate-Water-Pump-1', location: 'Engineering Block'},
-                {name: 'Primary-Condensate-Water-Pump-2', location: 'Engineering Block'},
-                {name: 'Primary-Condensate-Water-Pump-3', location: 'Engineering Block'}
-                //{name: 'Chiller-1', location: 'Block Engineering'}, 
-                //{name: 'Chiller-2', location: 'Block Engineering'},
-                //{name: 'Cooling Tower-1', location: 'Block Engineering'},
-                //{name: 'Cooling Tower-2', location: 'Block Engineering'},
-                //{name: 'CWP-1', location: 'Block Engineering'}, 
-                //{name: 'CWP-2', location: 'Block Engineering'},
-                //{name: 'CHWP-1', location: 'Block Engineering'},
-                //{name: 'CHWP-2', location: 'Block Engineering'},
-            ],
-            
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'Main Fire Alarm Panel', location: 'Control Room'}
-            ],
-            
-            'AUTOCLAVE': [
-                {name: 'Autoclave-1', location: 'Main'}, 
-                //{name: 'Autoclave-2 (BER)', location: 'Main'},
-                {name: 'Autoclave-3', location: 'Main'}
-            ],
-            
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Medical Air Manifold', location: 'Engineering Block'},
-                {name: 'Nitrous Oxide', location: 'Engineering Block'},
-                {name: 'Medical Air Compressor', location: 'Engineering Block'},
-                {name: 'Vacuum', location: 'Engineering Block'},
-                {name: 'VIE Tank', location: 'Engineering Block'},
-                {name: 'AGSS', location: 'Engineering Block'},
+             'NON AMBULANCE': [
+                {name: 'Model Isuzu Npr 59p (WDD3319)', location: 'Isuzu'},
+                {name: 'Model Pregio Fpgdh55 (WPG 9650)', location: 'Kia Pregio'},
+                {name: 'Model Frontier (NCD 9419)', location: 'Nissan'},
+                {name: 'Model Hws4rdfe25dwv-Urvan Panel Van (WWC 3293)', location: 'Nissan'},
+                {name: 'Model Nissan Vannete Vpc22efu (NBG8357)', location: 'Nissan'},
+                {name: 'Model Vannete Window Van (WUA7096)', location: 'Nissan'},
+                {name: 'Model X-Trail (WQE 8029)', location: 'Nissan'},
+                {name: 'Model Nisan X-Trail (NBV2820)', location: 'Nissan X-Trail'},
+                {name: 'Model Exora (WVY7289)', location: 'Proton'},
+                {name: 'Model Hiace (WC7548G)', location: 'Toyota'},
+                {name: 'Model Hiace Window Van 2500d (NDF7559)', location: 'Toyota'},
+                {name: 'Model Toyota Hiace Panel Van 2.5D (NDM7559)', location: 'Toyota'}
             ]
         };
 
@@ -337,20 +266,23 @@
                 messageBox.classList.add('opacity-0', '-translate-y-20');
             }, 3000);
         }
+
         function showPage(page) {
             mainMenuPage.classList.remove('active');
             formPage.classList.remove('active');
             document.getElementById(page + 'Page').classList.add('active');
         }
+
+               // MODIFIED: Generate form fields with JPJ dropdown added
         function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
-                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
+                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Model & Registration No:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
-                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
+                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Brand:</label>
                         <input type="text" id="location_${index}" name="location_${index}" value="${asset.location}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
@@ -361,6 +293,15 @@
                             <option value="Not Functioning">Not Functioning</option>
                         </select>
                     </div>
+                    <!-- NEW: JPJ dropdown field -->
+                    <div>
+                        <label for="jpj_${index}" class="block text-sm font-medium text-gray-700 mb-1">JPJ:</label>
+                        <select id="jpj_${index}" name="jpj_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
+                            <option value="" disabled selected>-- Sila Pilih --</option>
+                            <option value="Pass">Pass</option>
+                            <option value="Fail">Fail</option>
+                        </select>
+                    </div>
                     <div>
                         <label for="remark_${index}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
                         <textarea id="remark_${index}" name="remark_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
@@ -369,15 +310,13 @@
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
-
-                    <button type="button" 
-                            class="btn-primary submit-single-asset-button w-full mt-4" 
-                            onclick="submitSingleAsset(this)">
+                    <button type="button" class="btn-primary submit-single-asset-button w-full mt-4" onclick="submitSingleAsset(this)">
                         Hantar Aset Ini Sahaja
                     </button>
                 </div>
             `;
         }
+
         window.showForm = function(asset) {
             formTitle.textContent = `FORM - ${asset}`;
             assetForm.dataset.assetType = asset;
@@ -389,35 +328,47 @@
             });
             showPage('form');
         };
+
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
+
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
+        // MODIFIED: Submit single asset with JPJ data
         async function submitSingleAsset(button) {
-            const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
+            const formDiv = button.closest('.asset-card-individual');
             const statusSelect = formDiv.querySelector('select[name^="status"]');
+            const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
             
             if (statusSelect.value === "") {
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
+            
+            if (jpjSelect.value === "") {
+                showMessage("Sila pilih JPJ status (Pass/Fail) sebelum menghantar.", false);
+                return;
+            }
+    
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
-            const assetType = assetForm.dataset.assetType;     
-            // Extract data for the single asset
+    
+            const assetType = assetForm.dataset.assetType;
+            
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,
                 assetType: assetType,
                 assetName: formDiv.querySelector('input[name^="assetName"]').value,
                 status: statusSelect.value,
+                jpj: jpjSelect.value,
                 remark: formDiv.querySelector('textarea[name^="remark"]').value,
                 action: formDiv.querySelector('textarea[name^="action"]').value
             }];
-
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -425,13 +376,13 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
                 
-                // Reset/Kosongkan borang aset yang telah dihantar
-                formDiv.querySelector('select[name^="status"]').value = ''; 
-                formDiv.querySelector('textarea[name^="remark"]').value = ''; 
-                formDiv.querySelector('textarea[name^="action"]').value = ''; 
+                statusSelect.value = '';
+                jpjSelect.value = '';
+                formDiv.querySelector('textarea[name^="remark"]').value = '';
+                formDiv.querySelector('textarea[name^="action"]').value = '';
                 
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
@@ -442,46 +393,53 @@
             }
         }
         /////// TAMAT FUNGSI BARU ////////
+
         // FUNGSI ASAL: MENGENDALIKAN PENGHANTARAN BORANG UTAMA (SEMUA DIPILIH)
+        // MODIFIED: Submit all assets with JPJ data
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
+    
             const submitButton = event.target.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.textContent = 'Menghantar...';
-
+    
             const assetType = assetForm.dataset.assetType;
             const allForms = formFieldsContainer.querySelectorAll('div.bg-gray-50');
             const data = [];
-
+    
             allForms.forEach(formDiv => {
                 const statusSelect = formDiv.querySelector('select[name^="status"]');
-                // Hanya hantar data jika status telah dipilih
-                if (statusSelect.value !== "") {
+                const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
+                
+                if (statusSelect.value !== "" && jpjSelect.value !== "") {
                     const location = formDiv.querySelector('input[name^="location"]').value;
                     const assetName = formDiv.querySelector('input[name^="assetName"]').value;
                     const status = statusSelect.value;
+                    const jpj = jpjSelect.value;
                     const remark = formDiv.querySelector('textarea[name^="remark"]').value;
                     const action = formDiv.querySelector('textarea[name^="action"]').value;
-
+    
                     data.push({
                         location,
                         assetType,
                         assetName,
                         status,
+                        jpj,
                         remark,
                         action
                     });
                 }
             });
+    
             if (data.length === 0) {
-                showMessage("Sila isi sekurang-kurangnya satu borang.", false);
+                showMessage("Sila isi sekurang-kurangnya satu borang (Status dan JPJ mesti dipilih).", false);
                 submitButton.disabled = false;
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
+    
             try {
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -489,11 +447,10 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-
+    
                 showMessage("Laporan berjaya dihantar!", true);
                 assetForm.reset();
                 showPage('mainMenu');
-
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
                 showMessage('Ralat semasa menghantar. Sila cuba lagi.', false);
@@ -504,7 +461,7 @@
         });
     </script>
     <div id="floating-action-buttons">
-                <a href="Panduan Menggunakan Website (Update Critical System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
+                <a href="Panduan Menggunakan Website (Vehicle Monitoring System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                     </svg>
@@ -513,16 +470,3 @@
         </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
