@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMP FORM</title>
+    <title>KLN FORM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,7 +219,7 @@
         const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUsAIoRrXrIK_dJcPRMjlc9lq_iaodP0lQyyX8qPx2b4c2Qln-xxmjyh0y7qoTpZY/exec';//Write the API here
 
         const assetLists = {
-             'AMBULANCE': [
+               'AMBULANCE': [
                 {name: 'Model Toyota Hiace Panel Slwb 2.7 Mt (BPG2843)', location: 'Toyota'},
                 {name: 'Model Toyota Hiace Slwb (BPG1602)', location: 'Toyota'},
                 {name: 'Model Avp V647 (BNS 9305)', location: 'Toyota Hiace'},
@@ -262,7 +262,7 @@
             document.getElementById(page + 'Page').classList.add('active');
         }
 
-               // MODIFIED: Generate form fields with JPJ dropdown added
+               // MODIFIED: Generate form fields with JKR dropdown added
         function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
@@ -282,10 +282,10 @@
                             <option value="Not Functioning">Not Functioning</option>
                         </select>
                     </div>
-                    <!-- NEW: JPJ dropdown field -->
+                    <!-- NEW: JKR dropdown field -->
                     <div>
-                        <label for="jpj_${index}" class="block text-sm font-medium text-gray-700 mb-1">JPJ:</label>
-                        <select id="jpj_${index}" name="jpj_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
+                        <label for="jkr_${index}" class="block text-sm font-medium text-gray-700 mb-1">JKR:</label>
+                        <select id="jkr_${index}" name="jkr_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
                             <option value="" disabled selected>-- Sila Pilih --</option>
                             <option value="Pass">Pass</option>
                             <option value="Fail">Fail</option>
@@ -324,19 +324,19 @@
         });
 
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
-        // MODIFIED: Submit single asset with JPJ data
+        // MODIFIED: Submit single asset with JKR data
         async function submitSingleAsset(button) {
             const formDiv = button.closest('.asset-card-individual');
             const statusSelect = formDiv.querySelector('select[name^="status"]');
-            const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
+            const jkrSelect = formDiv.querySelector('select[name^="jkr"]');
             
             if (statusSelect.value === "") {
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
             
-            if (jpjSelect.value === "") {
-                showMessage("Sila pilih JPJ status (Pass/Fail) sebelum menghantar.", false);
+            if (jkrSelect.value === "") {
+                showMessage("Sila pilih JKR status (Pass/Fail) sebelum menghantar.", false);
                 return;
             }
     
@@ -351,7 +351,7 @@
                 assetType: assetType,
                 assetName: formDiv.querySelector('input[name^="assetName"]').value,
                 status: statusSelect.value,
-                jpj: jpjSelect.value,
+                jkr: jkrSelect.value,
                 remark: formDiv.querySelector('textarea[name^="remark"]').value,
                 action: formDiv.querySelector('textarea[name^="action"]').value
             }];
@@ -369,7 +369,7 @@
                 showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
                 
                 statusSelect.value = '';
-                jpjSelect.value = '';
+                jkrSelect.value = '';
                 formDiv.querySelector('textarea[name^="remark"]').value = '';
                 formDiv.querySelector('textarea[name^="action"]').value = '';
                 
@@ -384,7 +384,7 @@
         /////// TAMAT FUNGSI BARU ////////
 
         // FUNGSI ASAL: MENGENDALIKAN PENGHANTARAN BORANG UTAMA (SEMUA DIPILIH)
-        // MODIFIED: Submit all assets with JPJ data
+        // MODIFIED: Submit all assets with JKR data
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
     
@@ -398,13 +398,13 @@
     
             allForms.forEach(formDiv => {
                 const statusSelect = formDiv.querySelector('select[name^="status"]');
-                const jpjSelect = formDiv.querySelector('select[name^="jpj"]');
+                const jkrSelect = formDiv.querySelector('select[name^="jkr"]');
                 
-                if (statusSelect.value !== "" && jpjSelect.value !== "") {
+                if (statusSelect.value !== "" && jkrSelect.value !== "") {
                     const location = formDiv.querySelector('input[name^="location"]').value;
                     const assetName = formDiv.querySelector('input[name^="assetName"]').value;
                     const status = statusSelect.value;
-                    const jpj = jpjSelect.value;
+                    const jkr = jkrSelect.value;
                     const remark = formDiv.querySelector('textarea[name^="remark"]').value;
                     const action = formDiv.querySelector('textarea[name^="action"]').value;
     
@@ -413,7 +413,7 @@
                         assetType,
                         assetName,
                         status,
-                        jpj,
+                        jkr,
                         remark,
                         action
                     });
@@ -421,7 +421,7 @@
             });
     
             if (data.length === 0) {
-                showMessage("Sila isi sekurang-kurangnya satu borang (Status dan JPJ mesti dipilih).", false);
+                showMessage("Sila isi sekurang-kurangnya satu borang (Status dan JKR mesti dipilih).", false);
                 submitButton.disabled = false;
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
@@ -459,4 +459,9 @@
         </div>
 </body>
 </html>
+
+
+
+
+
 
